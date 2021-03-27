@@ -1,4 +1,4 @@
-import { computed } from "mobx";
+import { computed, makeObservable } from "mobx";
 import AppStore from "../stores/app-store";
 import IComment from "../types/comment";
 
@@ -15,6 +15,8 @@ export default class Comment implements IComment {
     this.name = comment.name;
     this.title = comment.title;
     this.body = comment.body;
+
+    makeObservable(this);
   }
 
   @computed get post() {

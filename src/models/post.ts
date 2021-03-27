@@ -1,4 +1,4 @@
-import { computed } from "mobx";
+import { computed, makeObservable } from "mobx";
 import AppStore from "../stores/app-store";
 import IPost from "../types/post";
 
@@ -13,6 +13,8 @@ export default class Post implements IPost {
     this.userId = post.userId;
     this.title = post.title;
     this.body = post.body;
+
+    makeObservable(this);
   }
 
   @computed get user() {

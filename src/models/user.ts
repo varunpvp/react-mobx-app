@@ -1,4 +1,4 @@
-import { computed } from "mobx";
+import { computed, makeObservable } from "mobx";
 import AppStore from "../stores/app-store";
 import IUser from "../types/user";
 
@@ -13,6 +13,8 @@ export default class User implements IUser {
     this.name = user.name;
     this.username = user.username;
     this.email = user.email;
+
+    makeObservable(this);
   }
 
   @computed get posts() {
