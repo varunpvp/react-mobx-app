@@ -1,3 +1,4 @@
+import { computed } from "mobx";
 import AppStore from "../stores/app-store";
 import IPost from "../types/post";
 
@@ -14,11 +15,11 @@ export default class Post implements IPost {
     this.body = post.body;
   }
 
-  get user() {
+  @computed get user() {
     return this.store.user.byId.get(this.userId);
   }
 
-  get comments() {
+  @computed get comments() {
     return this.store.comment.all.filter((it) => it.postId === this.id);
   }
 }

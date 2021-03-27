@@ -1,3 +1,4 @@
+import { computed } from "mobx";
 import AppStore from "../stores/app-store";
 import IComment from "../types/comment";
 
@@ -16,7 +17,7 @@ export default class Comment implements IComment {
     this.body = comment.body;
   }
 
-  get post() {
+  @computed get post() {
     return this.store.post.byId.get(this.postId);
   }
 }

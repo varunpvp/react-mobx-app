@@ -1,3 +1,4 @@
+import { computed } from "mobx";
 import AppStore from "../stores/app-store";
 import IUser from "../types/user";
 
@@ -14,7 +15,7 @@ export default class User implements IUser {
     this.email = user.email;
   }
 
-  get posts() {
+  @computed get posts() {
     return this.store.post.all.filter((it) => it.userId === this.id);
   }
 }
