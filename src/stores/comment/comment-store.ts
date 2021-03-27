@@ -6,6 +6,7 @@ import {
   ObservableMap,
 } from "mobx";
 import IComment from "../../types/comment";
+import Comment from "../../models/comment";
 
 import AppStore from "../app-store";
 
@@ -22,25 +23,5 @@ export default class CommentStore {
 
   @computed get all() {
     return Array.from(this.byId.values());
-  }
-}
-
-export class Comment implements IComment {
-  id: number;
-  postId: number;
-  name: string;
-  title: string;
-  body: string;
-
-  constructor(private store: AppStore, comment: IComment) {
-    this.id = comment.id;
-    this.postId = comment.postId;
-    this.name = comment.name;
-    this.title = comment.title;
-    this.body = comment.body;
-  }
-
-  get post() {
-    return this.store.post.byId.get(this.postId);
   }
 }
