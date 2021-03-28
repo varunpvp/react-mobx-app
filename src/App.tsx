@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route path="/user/:userId" component={UserPage} />
           <Route path="/post/:postId" component={PostPgae} />
-          <Route path="/" exact component={PostsPage} />
+          <Route path="/" component={PostsPage} />
         </Switch>
       </BrowserRouter>
     </AppStoreContext.Provider>
