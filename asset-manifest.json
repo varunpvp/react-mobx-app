@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-mobx-app/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/react-mobx-app/static/js/main.1bc2f15f.chunk.js",
-    "main.js.map": "/react-mobx-app/static/js/main.1bc2f15f.chunk.js.map",
+    "main.js": "/react-mobx-app/static/js/main.a07bdb58.chunk.js",
+    "main.js.map": "/react-mobx-app/static/js/main.a07bdb58.chunk.js.map",
     "runtime-main.js": "/react-mobx-app/static/js/runtime-main.74e05338.js",
     "runtime-main.js.map": "/react-mobx-app/static/js/runtime-main.74e05338.js.map",
     "static/js/2.896df327.chunk.js": "/react-mobx-app/static/js/2.896df327.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.74e05338.js",
     "static/js/2.896df327.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.1bc2f15f.chunk.js"
+    "static/js/main.a07bdb58.chunk.js"
   ]
 }
