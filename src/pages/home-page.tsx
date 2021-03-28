@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Post from "../components/post";
 import useAppStore from "../stores/use-app-store";
 
-const PostsPage = observer(() => {
+const HomePage = observer(() => {
   const store = useAppStore();
   const [loading, setLoading] = useState(false);
 
@@ -37,4 +37,4 @@ const PostsPage = observer(() => {
   );
 });
 
-export default PostsPage;
+export default HomePage;

@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PostsPage from "./pages/posts-page";
+import HomePage from "./pages/home-page";
 import PostPgae from "./pages/post-page";
 import UserPage from "./pages/user-page";
 
@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route path="/user/:userId" component={UserPage} />
           <Route path="/post/:postId" component={PostPgae} />
-          <Route path="/" component={PostsPage} />
+          <Route path="/" component={HomePage} />
         </Switch>
       </BrowserRouter>
     </AppStoreContext.Provider>
