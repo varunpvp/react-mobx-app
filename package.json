@@ -46,6 +46,5 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7"
-  },
-  "homepage": "https://varunpvp.github.io/react-mobx-app"
+  }
 }
