@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import Post from "../components/post";
 import useAppStore from "../stores/use-app-store";
 
-const PostPgae = observer(() => {
+const PostPage = observer(() => {
   const [loading, setLoading] = useState(false);
 
   const store = useAppStore();
@@ -60,4 +60,4 @@ const PostPgae = observer(() => {
   );
 });
 
-export default PostPgae;
+export default PostPage;
