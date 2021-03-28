@@ -6,14 +6,14 @@ export default class Comment implements IComment {
   id: number;
   postId: number;
   name: string;
-  title: string;
+  email: string;
   body: string;
 
   constructor(private store: AppStore, comment: IComment) {
     this.id = comment.id;
     this.postId = comment.postId;
     this.name = comment.name;
-    this.title = comment.title;
+    this.email = comment.email;
     this.body = comment.body;
 
     makeObservable(this);

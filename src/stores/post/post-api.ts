@@ -8,6 +8,11 @@ export default class PostApi {
     this.store.post.load(res.data);
   }
 
+  async getById(id: number) {
+    const res = await this.store.axios.get(`/posts/${id}`);
+    this.store.post.load([res.data]);
+  }
+
   async getByUserId(userId: number) {
     const res = await this.store.axios.get(`/posts?userId=${userId}`);
     this.store.post.load(res.data);

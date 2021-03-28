@@ -2,6 +2,6 @@ export default interface IComment {
   id: number;
   postId: number;
   name: string;
-  title: string;
+  email: string;
   body: string;
 }

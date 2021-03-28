@@ -8,11 +8,16 @@ import {
 import Post from "../../models/post";
 import IPost from "../../types/post";
 import AppStore from "../app-store";
+import PostApi from "./post-api";
 
 export default class PostStore {
+  api: PostApi;
+
   @observable byId = new ObservableMap<number, Post>();
 
   constructor(private store: AppStore) {
+    this.api = new PostApi(store);
+
     makeObservable(this);
   }
 
