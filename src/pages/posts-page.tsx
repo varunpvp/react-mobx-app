@@ -19,6 +19,7 @@ const PostsPage = observer(() => {
 
   useEffect(() => {
     load();
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {

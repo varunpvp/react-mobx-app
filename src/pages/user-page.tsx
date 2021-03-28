@@ -25,6 +25,7 @@ const UserPage = observer(() => {
 
   useEffect(() => {
     load();
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {
