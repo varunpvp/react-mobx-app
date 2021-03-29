@@ -5,19 +5,14 @@ import {
   observable,
   ObservableMap,
 } from "mobx";
-import Post from "../../models/post";
-import IPost from "../../types/post";
-import AppStore from "../app-store";
-import PostApi from "./post-api";
+import Post from "../models/post";
+import IPost from "../types/post";
+import AppStore from "./app";
 
 export default class PostStore {
-  api: PostApi;
-
   @observable byId = new ObservableMap<number, Post>();
 
   constructor(private store: AppStore) {
-    this.api = new PostApi(store);
-
     makeObservable(this);
   }
 

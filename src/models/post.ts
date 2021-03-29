@@ -1,5 +1,5 @@
 import { computed, makeObservable } from "mobx";
-import AppStore from "../stores/app-store";
+import AppStore from "../stores/app";
 import IPost from "../types/post";
 
 export default class Post implements IPost {

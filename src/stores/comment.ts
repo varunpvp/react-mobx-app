@@ -5,20 +5,15 @@ import {
   observable,
   ObservableMap,
 } from "mobx";
-import IComment from "../../types/comment";
-import Comment from "../../models/comment";
+import IComment from "../types/comment";
+import Comment from "../models/comment";
 
-import AppStore from "../app-store";
-import CommentApi from "./comment-api";
+import AppStore from "./app";
 
 export default class CommentStore {
-  api: CommentApi;
-
   @observable byId = new ObservableMap<number, Comment>();
 
   constructor(private store: AppStore) {
-    this.api = new CommentApi(store);
-
     makeObservable(this);
   }
 

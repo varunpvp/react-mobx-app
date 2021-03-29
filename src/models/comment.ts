@@ -1,5 +1,5 @@
 import { computed, makeObservable } from "mobx";
-import AppStore from "../stores/app-store";
+import AppStore from "../stores/app";
 import IComment from "../types/comment";
 
 export default class Comment implements IComment {

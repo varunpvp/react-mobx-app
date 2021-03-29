@@ -1,17 +1,17 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
+import { useAppContext } from "../app-context";
 import Post from "../components/post";
-import useAppStore from "../stores/use-app-store";
 
 const HomePage = observer(() => {
-  const store = useAppStore();
+  const { api, store } = useAppContext();
   const [loading, setLoading] = useState(false);
 
   const load = async () => {
     try {
       setLoading(true);
-      await store.post.api.getAll();
-      await store.user.api.getAll();
+      await api.post.getAll();
+      await api.user.getAll();
     } finally {
       setLoading(false);
     }

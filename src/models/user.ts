@@ -1,5 +1,5 @@
 import { computed, makeObservable } from "mobx";
-import AppStore from "../stores/app-store";
+import AppStore from "../stores/app";
 import IUser from "../types/user";
 
 export default class User implements IUser {

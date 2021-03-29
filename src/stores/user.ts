@@ -5,19 +5,14 @@ import {
   observable,
   ObservableMap,
 } from "mobx";
-import User from "../../models/user";
-import IUser from "../../types/user";
-import AppStore from "../app-store";
-import UserApi from "./user-api";
+import User from "../models/user";
+import IUser from "../types/user";
+import AppStore from "./app";
 
 export default class UserStore {
-  api: UserApi;
-
   @observable byId = new ObservableMap<number, User>();
 
   constructor(private store: AppStore) {
-    this.api = new UserApi(store);
-
     makeObservable(this);
   }
 

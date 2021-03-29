@@ -1,8 +1,8 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useAppContext } from "../app-context";
 import Post from "../components/post";
-import useAppStore from "../stores/use-app-store";
 
 const UserPage = observer(() => {
   const [loading, setLoading] = useState(false);
@@ -11,13 +11,13 @@ const UserPage = observer(() => {
 
   const userId = Number(params.userId);
 
-  const store = useAppStore();
+  const { api, store } = useAppContext();
 
   const load = async () => {
     try {
       setLoading(true);
-      await store.user.api.getById(userId);
-      await store.post.api.getByUserId(userId);
+      await api.user.getById(userId);
+      await api.post.getByUserId(userId);
     } finally {
       setLoading(false);
     }
