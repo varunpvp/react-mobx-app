@@ -47,7 +47,7 @@ const UserPage = observer(() => {
 
       <h2>Posts</h2>
 
-      {user.posts?.map((post) => (
+      {user.posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </div>
