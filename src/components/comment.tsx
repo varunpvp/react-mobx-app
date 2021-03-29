@@ -3,7 +3,7 @@ import CommentModel from "../models/comment";
 
 const Comment: React.FC<{ comment: CommentModel }> = observer(({ comment }) => {
   return (
-    <div key={comment.id}>
+    <div>
       <strong>
         {comment.name} • {comment.email}
       </strong>
