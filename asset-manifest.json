@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/react-mobx-app/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/react-mobx-app/static/js/main.8eb56793.chunk.js",
-    "main.js.map": "/react-mobx-app/static/js/main.8eb56793.chunk.js.map",
+    "main.js": "/react-mobx-app/static/js/main.df33a4a9.chunk.js",
+    "main.js.map": "/react-mobx-app/static/js/main.df33a4a9.chunk.js.map",
     "runtime-main.js": "/react-mobx-app/static/js/runtime-main.74e05338.js",
     "runtime-main.js.map": "/react-mobx-app/static/js/runtime-main.74e05338.js.map",
-    "static/js/2.896df327.chunk.js": "/react-mobx-app/static/js/2.896df327.chunk.js",
-    "static/js/2.896df327.chunk.js.map": "/react-mobx-app/static/js/2.896df327.chunk.js.map",
+    "static/js/2.c57c0be5.chunk.js": "/react-mobx-app/static/js/2.c57c0be5.chunk.js",
+    "static/js/2.c57c0be5.chunk.js.map": "/react-mobx-app/static/js/2.c57c0be5.chunk.js.map",
     "static/js/3.39779130.chunk.js": "/react-mobx-app/static/js/3.39779130.chunk.js",
     "static/js/3.39779130.chunk.js.map": "/react-mobx-app/static/js/3.39779130.chunk.js.map",
     "index.html": "/react-mobx-app/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/react-mobx-app/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.896df327.chunk.js.LICENSE.txt": "/react-mobx-app/static/js/2.896df327.chunk.js.LICENSE.txt"
+    "static/js/2.c57c0be5.chunk.js.LICENSE.txt": "/react-mobx-app/static/js/2.c57c0be5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.74e05338.js",
-    "static/js/2.896df327.chunk.js",
+    "static/js/2.c57c0be5.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.8eb56793.chunk.js"
+    "static/js/main.df33a4a9.chunk.js"
   ]
 }
