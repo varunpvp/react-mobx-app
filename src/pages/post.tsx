@@ -39,7 +39,7 @@ const PostPage = observer(() => {
 
   return (
     <div>
-      <Post post={post} />
+      <Post ellipsisBody={false} post={post} />
 
       <h2>Comments </h2>
 
