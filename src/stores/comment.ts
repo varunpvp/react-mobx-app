@@ -1,17 +1,10 @@
-import {
-  action,
-  computed,
-  makeObservable,
-  observable,
-  ObservableMap,
-} from "mobx";
+import { action, computed, makeObservable, observable } from "mobx";
 import IComment from "../types/comment";
 import Comment from "../models/comment";
-
 import AppStore from "./app";
 
 export default class CommentStore {
-  @observable byId = new ObservableMap<number, Comment>();
+  byId = observable.map<number, Comment>();
 
   constructor(private store: AppStore) {
     makeObservable(this);
