@@ -2,6 +2,7 @@ import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useAppContext } from "../app-context";
+import Comment from "../components/comment";
 import Post from "../components/post";
 
 const PostPage = observer(() => {
@@ -43,17 +44,9 @@ const PostPage = observer(() => {
 
       <h2>Comments </h2>
 
-      {post.comments.map((comment) => {
-        return (
-          <div key={comment.id}>
-            <strong>
-              {comment.name} • {comment.email}
-            </strong>
-            <p>{comment.body}</p>
-            <br />
-          </div>
-        );
-      })}
+      {post.comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} />
+      ))}
     </div>
   );
 });
