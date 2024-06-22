@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useRootContext } from "../root-context";
+import { useRootStore } from "../root-context";
 import { Post } from "../components/post";
 
 export const UserPage = observer(() => {
@@ -11,13 +11,13 @@ export const UserPage = observer(() => {
 
   const userId = Number(params.userId);
 
-  const { api, store } = useRootContext();
+  const rootStore = useRootStore();
 
   const load = async () => {
     try {
       setLoading(true);
-      await api.user.getById(userId);
-      await api.post.getByUserId(userId);
+      await rootStore.user.loadById(userId);
+      await rootStore.post.loadByUserId(userId);
     } finally {
       setLoading(false);
     }
@@ -32,7 +32,9 @@ export const UserPage = observer(() => {
     return <div>loading...</div>;
   }
 
-  const user = store.user.byId.get(userId);
+  const user = rootStore.user.byId.get(userId);
+
+  console.log(user);
 
   if (!user) {
     return <div>User not found</div>;

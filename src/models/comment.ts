@@ -1,6 +1,6 @@
 import { computed, makeObservable } from "mobx";
 import { RootStore } from "../stores/root";
-import { IComment } from "../types/comment";
+import { IComment } from "../entities/comment";
 
 export class Comment implements IComment {
   id: number;

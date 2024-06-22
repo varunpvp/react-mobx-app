@@ -1,5 +1,4 @@
 import axios from "axios";
-import { RootStore } from "../stores/root";
 import { CommentApi } from "./comment";
 import { PostApi } from "./post";
 import { UserApi } from "./user";
@@ -11,9 +10,9 @@ export class RootApi {
   post: PostApi;
   comment: CommentApi;
 
-  constructor(store: RootStore) {
-    this.user = new UserApi(this, store);
-    this.post = new PostApi(this, store);
-    this.comment = new CommentApi(this, store);
+  constructor() {
+    this.user = new UserApi(this);
+    this.post = new PostApi(this);
+    this.comment = new CommentApi(this);
   }
 }

@@ -13,3 +13,7 @@ export const useRootContext = () => {
   const context = useContext(RootContext);
   return context as RootContextObject;
 };
+
+export const useRootStore = () => useRootContext().store;
+
+export const useRootApi = () => useRootContext().api;

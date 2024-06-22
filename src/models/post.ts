@@ -1,6 +1,6 @@
 import { computed, makeObservable } from "mobx";
 import { RootStore } from "../stores/root";
-import { IPost } from "../types/post";
+import { IPost } from "../entities/post";
 
 export class Post implements IPost {
   id: number;

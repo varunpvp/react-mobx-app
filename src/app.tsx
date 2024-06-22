@@ -6,8 +6,8 @@ import { HomePage } from "./pages/home";
 import { PostPage } from "./pages/post";
 import { UserPage } from "./pages/user";
 
-const store = new RootStore();
-const api = new RootApi(store);
+const api = new RootApi();
+const store = new RootStore(api);
 
 function App() {
   return (

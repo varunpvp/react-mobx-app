@@ -1,17 +1,18 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
-import { useRootContext } from "../root-context";
+import { useRootStore } from "../root-context";
 import { Post } from "../components/post";
 
 export const HomePage = observer(() => {
-  const { api, store } = useRootContext();
+  const rootStore = useRootStore();
+
   const [loading, setLoading] = useState(false);
 
   const load = async () => {
     try {
       setLoading(true);
-      await api.post.getAll();
-      await api.user.getAll();
+      await rootStore.post.loadAll();
+      await rootStore.user.loadAll();
     } finally {
       setLoading(false);
     }
@@ -30,7 +31,7 @@ export const HomePage = observer(() => {
     <div>
       <h1>Posts</h1>
 
-      {store.post.all.map((post) => (
+      {rootStore.post.all.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </div>

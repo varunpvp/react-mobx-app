@@ -1,6 +1,6 @@
 import { computed, makeObservable } from "mobx";
 import { RootStore } from "../stores/root";
-import { IUser } from "../types/user";
+import { IUser } from "../entities/user";
 
 export class User implements IUser {
   id: number;

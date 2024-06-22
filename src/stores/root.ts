@@ -1,9 +1,12 @@
+import { RootApi } from "../apis/root";
 import { CommentStore } from "./comment";
 import { PostStore } from "./post";
 import { UserStore } from "./user";
 
 export class RootStore {
-  user = new UserStore(this);
-  post = new PostStore(this);
-  comment = new CommentStore(this);
+  constructor(private api: RootApi) {}
+
+  user = new UserStore(this, this.api);
+  post = new PostStore(this, this.api);
+  comment = new CommentStore(this, this.api);
 }

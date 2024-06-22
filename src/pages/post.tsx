@@ -1,12 +1,12 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useRootContext } from "../root-context";
+import { useRootStore } from "../root-context";
 import { Comment } from "../components/comment";
 import { Post } from "../components/post";
 
 export const PostPage = observer(() => {
-  const { api, store } = useRootContext();
+  const rootStore = useRootStore();
   const [loading, setLoading] = useState(false);
 
   const params = useParams<{ postId: string }>();
@@ -16,8 +16,8 @@ export const PostPage = observer(() => {
   const load = async () => {
     try {
       setLoading(true);
-      await api.post.getById(postId);
-      await api.comment.getByPostId(postId);
+      await rootStore.post.loadById(postId);
+      await rootStore.comment.loadByPostId(postId);
     } finally {
       setLoading(false);
     }
@@ -32,7 +32,7 @@ export const PostPage = observer(() => {
     return <div>loading...</div>;
   }
 
-  const post = store.post.byId.get(Number(params.postId));
+  const post = rootStore.post.byId.get(Number(params.postId));
 
   if (!post) {
     return <div>Post not found</div>;
