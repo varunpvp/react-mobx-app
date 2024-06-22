@@ -1,12 +1,12 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useAppContext } from "../app-context";
-import Comment from "../components/comment";
-import Post from "../components/post";
+import { useRootContext } from "../root-context";
+import { Comment } from "../components/comment";
+import { Post } from "../components/post";
 
-const PostPage = observer(() => {
-  const { api, store } = useAppContext();
+export const PostPage = observer(() => {
+  const { api, store } = useRootContext();
   const [loading, setLoading] = useState(false);
 
   const params = useParams<{ postId: string }>();
@@ -50,5 +50,3 @@ const PostPage = observer(() => {
     </div>
   );
 });
-
-export default PostPage;

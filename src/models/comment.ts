@@ -1,15 +1,15 @@
 import { computed, makeObservable } from "mobx";
-import AppStore from "../stores/app";
-import IComment from "../types/comment";
+import { RootStore } from "../stores/root";
+import { IComment } from "../types/comment";
 
-export default class Comment implements IComment {
+export class Comment implements IComment {
   id: number;
   postId: number;
   name: string;
   email: string;
   body: string;
 
-  constructor(private store: AppStore, comment: IComment) {
+  constructor(private store: RootStore, comment: IComment) {
     this.id = comment.id;
     this.postId = comment.postId;
     this.name = comment.name;

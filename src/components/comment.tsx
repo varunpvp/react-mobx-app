@@ -1,16 +1,16 @@
 import { observer } from "mobx-react";
-import CommentModel from "../models/comment";
+import { Comment as CommentModel } from "../models/comment";
 
-const Comment: React.FC<{ comment: CommentModel }> = observer(({ comment }) => {
-  return (
-    <div>
-      <strong>
-        {comment.name} • {comment.email}
-      </strong>
-      <p>{comment.body}</p>
-      <br />
-    </div>
-  );
-});
-
-export default Comment;
+export const Comment: React.FC<{ comment: CommentModel }> = observer(
+  ({ comment }) => {
+    return (
+      <div>
+        <strong>
+          {comment.name} • {comment.email}
+        </strong>
+        <p>{comment.body}</p>
+        <br />
+      </div>
+    );
+  }
+);

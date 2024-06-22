@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import AppContext from "./app-context";
-import AppStore from "./stores/app";
-import AppApi from "./apis/app";
-import HomePage from "./pages/home";
-import PostPage from "./pages/post";
-import UserPage from "./pages/user";
+import { RootContext } from "./root-context";
+import { RootStore } from "./stores/root";
+import { RootApi } from "./apis/root";
+import { HomePage } from "./pages/home";
+import { PostPage } from "./pages/post";
+import { UserPage } from "./pages/user";
 
-const store = new AppStore();
-const api = new AppApi(store);
+const store = new RootStore();
+const api = new RootApi(store);
 
 function App() {
   return (
-    <AppContext.Provider value={{ store, api }}>
+    <RootContext.Provider value={{ store, api }}>
       <BrowserRouter>
         <Switch>
           <Route path="/user/:userId" component={UserPage} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/" component={HomePage} />
         </Switch>
       </BrowserRouter>
-    </AppContext.Provider>
+    </RootContext.Provider>
   );
 }
 

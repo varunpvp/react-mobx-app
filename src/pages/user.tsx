@@ -1,17 +1,17 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useAppContext } from "../app-context";
-import Post from "../components/post";
+import { useRootContext } from "../root-context";
+import { Post } from "../components/post";
 
-const UserPage = observer(() => {
+export const UserPage = observer(() => {
   const [loading, setLoading] = useState(false);
 
   const params = useParams<{ userId: string }>();
 
   const userId = Number(params.userId);
 
-  const { api, store } = useAppContext();
+  const { api, store } = useRootContext();
 
   const load = async () => {
     try {
@@ -53,5 +53,3 @@ const UserPage = observer(() => {
     </div>
   );
 });
-
-export default UserPage;

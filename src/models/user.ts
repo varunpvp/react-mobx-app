@@ -1,14 +1,14 @@
 import { computed, makeObservable } from "mobx";
-import AppStore from "../stores/app";
-import IUser from "../types/user";
+import { RootStore } from "../stores/root";
+import { IUser } from "../types/user";
 
-export default class User implements IUser {
+export class User implements IUser {
   id: number;
   name: string;
   username: string;
   email: string;
 
-  constructor(private store: AppStore, user: IUser) {
+  constructor(private store: RootStore, user: IUser) {
     this.id = user.id;
     this.name = user.name;
     this.username = user.username;

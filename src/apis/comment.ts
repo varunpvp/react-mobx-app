@@ -1,8 +1,8 @@
-import AppStore from "../stores/app";
-import AppApi from "./app";
+import { RootStore } from "../stores/root";
+import { RootApi } from "./root";
 
-export default class CommentApi {
-  constructor(private api: AppApi, private store: AppStore) {}
+export class CommentApi {
+  constructor(private api: RootApi, private store: RootStore) {}
 
   async getByPostId(postId: number) {
     const res = await this.api.client.get(`/posts/${postId}/comments`);

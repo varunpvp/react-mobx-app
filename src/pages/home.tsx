@@ -1,10 +1,10 @@
 import { observer } from "mobx-react";
 import { useEffect, useState } from "react";
-import { useAppContext } from "../app-context";
-import Post from "../components/post";
+import { useRootContext } from "../root-context";
+import { Post } from "../components/post";
 
-const HomePage = observer(() => {
-  const { api, store } = useAppContext();
+export const HomePage = observer(() => {
+  const { api, store } = useRootContext();
   const [loading, setLoading] = useState(false);
 
   const load = async () => {
@@ -36,5 +36,3 @@ const HomePage = observer(() => {
     </div>
   );
 });
-
-export default HomePage;

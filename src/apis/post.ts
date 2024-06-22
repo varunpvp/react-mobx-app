@@ -1,8 +1,8 @@
-import AppStore from "../stores/app";
-import AppApi from "./app";
+import { RootStore } from "../stores/root";
+import { RootApi } from "./root";
 
-export default class PostApi {
-  constructor(private api: AppApi, private store: AppStore) {}
+export class PostApi {
+  constructor(private api: RootApi, private store: RootStore) {}
 
   async getAll() {
     const res = await this.api.client.get(`/posts`);

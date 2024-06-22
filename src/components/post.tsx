@@ -1,10 +1,10 @@
 import { observer } from "mobx-react";
 import React from "react";
 import { Link } from "react-router-dom";
-import PostModel from "../models/post";
+import { Post as PostModel } from "../models/post";
 
-const Post: React.FC<{ post: PostModel; ellipsisBody?: boolean }> = observer(
-  ({ post, ellipsisBody = true }) => {
+export const Post: React.FC<{ post: PostModel; ellipsisBody?: boolean }> =
+  observer(({ post, ellipsisBody = true }) => {
     return (
       <div>
         <h2>{post.title}</h2>
@@ -21,7 +21,4 @@ const Post: React.FC<{ post: PostModel; ellipsisBody?: boolean }> = observer(
         </p>
       </div>
     );
-  }
-);
-
-export default Post;
+  });

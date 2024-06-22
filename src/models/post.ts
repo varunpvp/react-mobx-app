@@ -1,14 +1,14 @@
 import { computed, makeObservable } from "mobx";
-import AppStore from "../stores/app";
-import IPost from "../types/post";
+import { RootStore } from "../stores/root";
+import { IPost } from "../types/post";
 
-export default class Post implements IPost {
+export class Post implements IPost {
   id: number;
   userId: number;
   title: string;
   body: string;
 
-  constructor(private store: AppStore, post: IPost) {
+  constructor(private store: RootStore, post: IPost) {
     this.id = post.id;
     this.userId = post.userId;
     this.title = post.title;

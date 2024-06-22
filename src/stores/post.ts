@@ -1,12 +1,12 @@
 import { action, computed, makeObservable, observable } from "mobx";
-import Post from "../models/post";
-import IPost from "../types/post";
-import AppStore from "./app";
+import { Post } from "../models/post";
+import { IPost } from "../types/post";
+import { RootStore } from "./root";
 
-export default class PostStore {
+export class PostStore {
   byId = observable.map<number, Post>();
 
-  constructor(private store: AppStore) {
+  constructor(private store: RootStore) {
     makeObservable(this);
   }
 
